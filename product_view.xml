@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    		 <record model="ir.ui.view" id="view_modifica_prezzi">
+                <field name="name">view.modifica.prezzi</field>
+                <field name="model">product.product</field>
+                <field name="type">form</field>
+                <field name="inherit_id" ref="product.product_normal_form_view"/>
+                <field name="arch" type="xml">
+                
+                <field name="price_extra" position="after">
+          	    	<field name="abilita_mod"/> 
+                    <field name="list_price" attrs="{'readonly':[('abilita_mod','=','no')]}"/>
+				</field>
+				</field>
+            </record>
+            
+            <record model="ir.ui.view" id="view_cancella_campi">
+                <field name="name">view.cancella.campi</field>
+                <field name="model">product.product</field>
+                <field name="type">form</field>
+                <field name="inherit_id" ref="product.product_normal_form_view"/>
+                <field name="arch" type="xml">
+                <field name="list_price" position="replace">
+                
+                </field>
+                </field>
+            </record>
+    </data>
+</openerp>
+    
